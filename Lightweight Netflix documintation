@@ -1,0 +1,49 @@
+*** clarification ***
+
+The go code was gathered and learnt from multiple resources on the internet (youtube , 
+stackoverflow, reddit , github, chatgpt) since my skills in golang was little to nothing but 
+I managed to write the code for the API after all, I kinda get the whole concept of whats 
+under the hood of any API now , although I'm not so familiar with the methods and built-in 
+libraries in go . 
+Here, I provide you the documentation of the API although It was supposed to be on Postman 
+or swagger,but there was a failure in connecting the API to the Postman website and
+I didnt want to share the link with you past the duedate.
+
+
+1) POST/register :
+  takes name , age , email and password of the user and saves it in the database .
+  
+2) POST/login : takes email and password of the user and returns a token for the user .
+the token is encrypted .
+
+3) POST/add-movie :
+  takes the movie's name , description , date , and cover , saves the information in the 
+  database and only the user with the token can add a movie.
+  
+4) PUT/edit-movie :
+  takes the movie's name , description , date , and cover , and only the user with the token 
+  can actually edit the movie in the database.
+
+5) DELETE/delete-movie/:id :
+  takes the movie ID as a parameter, and checks that the user who wants to delte the movie
+  is the user with the token , then the movie gets deleted from the database.
+
+6)GET/get-movie-info/:id : 
+  takes the movie id as a parameter , then returns the description of that movie with the rating
+  of that movie which is calculated by dividing the sum of all ratings by the number of raters.
+  
+7) GET /list-movies: 
+  Retrieves all movies from the database and sorts them by date or rating if specified in the query
+  parameters. Returns a list of movies with their ID, name, description, date, and cover.
+  
+8)POST /add-movie-to-watched-list:
+  Adds the movie to the user's watched list in the database , checks if the user has a token or
+  not.
+  
+9)POST /rate-and-review-movie: 
+  takes the rating as a query parameter from the user , the user must have watched the movie and 
+  must have the token.
+  
+
+  
+
